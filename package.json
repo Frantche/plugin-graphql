@@ -1,5 +1,5 @@
 {
-  "name": "@Frantche/plugin-graphql",
+  "name": "@vuex-orm/plugin-graphql",
   "version": "1.0.0-rc.42",
   "description": "Vuex-ORM persistence plugin to sync the store against a GraphQL API.",
   "main": "dist/vuex-orm-graphql.cjs.js",

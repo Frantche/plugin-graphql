@@ -9,7 +9,7 @@ import {
   pluralize,
   singularize
 } from "../support/utils";
-import { ConnectionMode } from "../adapters/adapter";
+import { ConnectionMode, Adapter } from "../adapters/adapter";
 
 /**
  * This class provides methods to transform incoming data from GraphQL in to a format Vuex-ORM understands and
@@ -255,7 +255,7 @@ export default class Transformer {
    * @param {string} fieldName
    */
   private static inputTypeContainsField(model: Model, fieldName: string): boolean {
-    const inputTypeName = `${model.singularName}Input`;
+    const inputTypeName = Adapter.getInputTypeName(model);
     const inputType: GraphQLType | null = Context.getInstance().schema!.getType(
       inputTypeName,
       false
